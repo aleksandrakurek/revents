@@ -3,7 +3,10 @@
 Deploy on github pages
 
 `git checkout gh-pages`
-`yarn run deploy`
+
+`git merge master`
+
+`npm run deploy`
 
 visit:
 https://aleksandrakurek.github.io/revents/
