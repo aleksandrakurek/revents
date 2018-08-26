@@ -7,7 +7,7 @@
 /coverage
 
 # production
-#/build
+/build
 
 # misc
 .DS_Store
@@ -23,4 +23,4 @@ yarn-error.log*
 
 course_assets
 .idea/
-/build
+build
