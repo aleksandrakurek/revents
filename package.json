@@ -2,7 +2,7 @@
   "name": "revents",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://aleksandrakurek.github.io/revents",
+  "homepage": "https://aleksandrakurek.github.io/revents",
   "dependencies": {
     "cuid": "^2.1.1",
     "date-fns": "^1.29.0",
