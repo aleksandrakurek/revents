@@ -18,7 +18,17 @@ const actions = {
   decrementCounter
 };
 
+const Marker = () => <Icon name='marker' size='big' color='red'/>
+
 class TestComponent extends Component {
+
+  static defaultProps = {
+    center: {
+      lat: 59.95,
+      lng: 30.33
+    },
+    zoom: 11
+  };
 
   state = {
     address: '',
@@ -46,28 +56,39 @@ class TestComponent extends Component {
       onChange: this.onChange
     };
 
-
     const { incrementCounter, decrementCounter, data } = this.props;
     return (
       <div>
-        <Script
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIXB0LUEp2y1m7TpboN3Mt2kzjOhydXXw&libraries=places"
-          onLoad={this.handleScriptLoad}
-        />
+        {/* <Script
+         url="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIXB0LUEp2y1m7TpboN3Mt2kzjOhydXXw&libraries=places"
+         onLoad={this.handleScriptLoad}
+         /> */}
         <h1>Test Area</h1>
         <h3>The answer is: {data}</h3>
-        <Button onClick={incrementCounter} color="green" content="Increment"/>
-        <Button onClick={decrementCounter} color="red" content="Decrement"/>
-        <br/>
-        <br/>
-        <br/>
+        <Button onClick={incrementCounter} color="green" content="Increment" />
+        <Button onClick={decrementCounter} color="red" content="Decrement" />
+        <br />
+        <br />
         <form onSubmit={this.handleFormSubmit}>
-          {this.state.scriptLoaded &&
-          <PlacesAutocomplete inputProps={inputProps}/>
-          }
-          <PlacesAutocomplete inputProps={inputProps}/>
+          {this.state.scriptLoaded && (
+            <PlacesAutocomplete inputProps={inputProps} />
+          )}
           <button type="submit">Submit</button>
         </form>
+
+        <div style={{ height: '300px', width: '100%' }}>
+          <GoogleMapReact
+            bootstrapURLKeys={{ key: 'AIzaSyAIXB0LUEp2y1m7TpboN3Mt2kzjOhydXXw' }}
+            defaultCenter={this.props.center}
+            defaultZoom={this.props.zoom}
+          >
+            <Marker
+              lat={59.955413}
+              lng={30.337844}
+              text={'Kreyser Avrora'}
+            />
+          </GoogleMapReact>
+        </div>
 
       </div>
     );
