@@ -5,6 +5,7 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import { createEvent, updateEvent } from '../eventActions'
 import TextInput from '../../../app/common/form/TextInput'
+import TextArea from '../../../app/common/form/TextArea'
 
 
 const mapState = (state, ownProps) => {
@@ -60,7 +61,8 @@ class EventForm extends Component {
             <Form onSubmit={this.onFormSubmit}>
               <Field name="title" type="text" component={TextInput} placeholder="Give your event a name"/>
               <Field name="category" type="text" component={TextInput} placeholder="What is your event about"/>
-              <Field name="description" type="text" component={TextInput} placeholder="Tell us about your event"/>
+              <Field name="description" rows="3" type="text" component={TextArea}
+                     placeholder="Tell us about your event"/>
 
               <Header sub color="teal" content="Event Location Details"/>
               <Field name="city" type="text" component={TextInput} placeholder="Event city"/>
