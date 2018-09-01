@@ -7,7 +7,7 @@ export const createEvent = (event) => {
       event
     }
   }
-};
+}
 
 export const updateEvent = (event) => {
   return {
@@ -16,7 +16,7 @@ export const updateEvent = (event) => {
       event
     }
   }
-};
+}
 
 export const deleteEvent = (eventId) => {
   return {
@@ -25,5 +25,4 @@ export const deleteEvent = (eventId) => {
       eventId
     }
   }
-};
-
+}

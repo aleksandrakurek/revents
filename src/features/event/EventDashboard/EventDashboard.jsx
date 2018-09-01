@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Grid } from 'semantic-ui-react';
-import EventList from '../EventList/EventList';
+import { connect } from 'react-redux';
 import { deleteEvent } from '../eventActions';
+import EventList from '../EventList/EventList';
 
-
-const mapState = (state) => ({
+const mapState = state => ({
   events: state.events
 });
 
@@ -15,8 +14,7 @@ const actions = {
 
 
 class EventDashboard extends Component {
-
-  handleDeleteEvent = (eventId) => () => {
+  handleDeleteEvent = eventId => () => {
     this.props.deleteEvent(eventId);
   };
 
@@ -25,13 +23,9 @@ class EventDashboard extends Component {
     return (
       <Grid>
         <Grid.Column width={10}>
-          <EventList
-            deleteEvent={this.handleDeleteEvent} s
-            events={events}
-          />
+          <EventList deleteEvent={this.handleDeleteEvent} events={events}/>
         </Grid.Column>
-        <Grid.Column width={6}>
-        </Grid.Column>
+        <Grid.Column width={6}/>
       </Grid>
     );
   }

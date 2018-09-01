@@ -11,9 +11,7 @@ import TextArea from '../../../app/common/form/TextArea';
 import SelectInput from '../../../app/common/form/SelectInput';
 import DateInput from '../../../app/common/form/DateInput';
 
-
 const mapState = (state, ownProps) => {
-
   const eventId = ownProps.match.params.id;
 
   let event = {};
@@ -21,9 +19,10 @@ const mapState = (state, ownProps) => {
   if (eventId && state.events.length > 0) {
     event = state.events.filter(event => event.id === eventId)[0];
   }
+
   return {
     initialValues: event
-  }
+  };
 };
 
 const actions = {
@@ -77,7 +76,7 @@ class EventForm extends Component {
       <Grid>
         <Grid.Column width={10}>
           <Segment>
-            <Header sub color="teal" content="Event Details"/>
+            <Header sub color='teal' content='Event Details'/>
             <Form onSubmit={this.props.handleSubmit(this.onFormSubmit)}>
               <Field
                 name="title"
@@ -134,7 +133,6 @@ class EventForm extends Component {
     );
   }
 }
-
 
 export default connect(mapState, actions)(
   reduxForm({ form: 'eventForm', enableReinitialize: true, validate })(EventForm)
