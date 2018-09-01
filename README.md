@@ -1,6 +1,10 @@
 # Revents App Readme.md
 
-Deploy on github pages
+## Running App 
+`yarn start`
+
+
+##Deploy on github pages
 
 `git checkout gh-pages`
 
