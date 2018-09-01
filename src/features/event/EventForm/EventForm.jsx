@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Segment, Form, Button, Grid, Header } from 'semantic-ui-react';
-import { cuid } from 'cuid';
-import { reduxForm, Field } from 'redux-form';
-import { composeValidators, combineValidators, isRequired, hasLengthGreaterThan } from 'revalidate';
 import { connect } from 'react-redux';
-import { createEvent, updateEvent } from '../eventActions'
-import TextInput from '../../../app/common/form/TextInput'
-import TextArea from '../../../app/common/form/TextArea'
-import SelectInput from '../../../app/common/form/SelectInput'
+import { reduxForm, Field } from 'redux-form';
+import moment from 'moment';
+import cuid from 'cuid';
+import { Segment, Form, Button, Grid, Header } from 'semantic-ui-react';
+import { composeValidators, combineValidators, isRequired, hasLengthGreaterThan } from 'revalidate'
+import { createEvent, updateEvent } from '../eventActions';
+import TextInput from '../../../app/common/form/TextInput';
+import TextArea from '../../../app/common/form/TextArea';
+import SelectInput from '../../../app/common/form/SelectInput';
+import DateInput from '../../../app/common/form/DateInput';
 
 
 const mapState = (state, ownProps) => {
@@ -39,19 +41,21 @@ const category = [
 ];
 
 const validate = combineValidators({
-  title: isRequired({ message: 'This title is required' }),
+  title: isRequired({ message: 'The event title is required' }),
   category: isRequired({ message: 'Please provide a category' }),
   description: composeValidators(
     isRequired({ message: 'Please enter a description' }),
-    hasLengthGreaterThan(4)({ message: "Desctiption needs to be at least 5 characters" })
+    hasLengthGreaterThan(4)({ message: 'Description needs to be at least 5 characters' })
   )(),
   city: isRequired('city'),
   venue: isRequired('venue'),
-});
+  date: isRequired('date')
+})
 
 class EventForm extends Component {
 
   onFormSubmit = values => {
+    values.date = moment(values.date).format()
     if (this.props.initialValues.id) {
       this.props.updateEvent(values);
       this.props.history.goBack();
@@ -63,7 +67,7 @@ class EventForm extends Component {
         hostedBy: 'Bob'
       };
       this.props.createEvent(newEvent);
-      this.props.history.push('/events');
+      this.props.history.push('/event');
     }
   };
 
@@ -108,11 +112,21 @@ class EventForm extends Component {
                 component={TextInput}
                 placeholder="Event venue"
               />
-              <Field name="date" type="text" component={TextInput} placeholder="Event Date"/>
+              <Field
+                name="date"
+                type="text"
+                component={DateInput}
+                dateFormat='YYYY-MM-DD HH:mm'
+                timeFormat='HH:mm'
+                showTimeSelect
+                placeholder="Date and time of event"
+              />
               <Button disabled={invalid || submitting || pristine} positive type="submit">
                 Submit
               </Button>
-              <Button onClick={this.props.history.goBack} type="button">Cancel</Button>
+              <Button onClick={this.props.history.goBack} type="button">
+                Cancel
+              </Button>
             </Form>
           </Segment>
         </Grid.Column>
