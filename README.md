@@ -12,6 +12,8 @@
 
 `npm run deploy`
 
+`yarn run deploy`
+
 visit:
 https://aleksandrakurek.github.io/revents/
 
