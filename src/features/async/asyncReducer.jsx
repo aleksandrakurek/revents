@@ -6,15 +6,15 @@ const initialState = {
 }
 
 export const asyncActionStarted = (state, payload) => {
-  return {...state, loading: true}
+  return { ...state, loading: true }
 }
 
 export const asyncActionFinished = (state) => {
-  return {...state, loading: false}
+  return { ...state, loading: false }
 }
 
 export const asyncActionError = (state) => {
-  return {...state, loading: false}
+  return { ...state, loading: false }
 }
 
 export default createReducer(initialState, {
