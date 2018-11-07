@@ -5,17 +5,15 @@ import { Menu, Container, Button } from 'semantic-ui-react';
 import { NavLink, Link, withRouter } from 'react-router-dom';
 import SignedOutMenu from '../Menus/SignedOutMenu';
 import SignedInMenu from '../Menus/SignedInMenu';
-import { openModal } from '../../modals/modalActions'
-import { logout } from '../../auth/authActions'
+import { openModal } from '../../modals/modalActions';
 
 const actions = {
-  openModal,
-  logout
-}
+  openModal
+};
 
 const mapState = (state) => ({
   auth: state.firebase.auth
-})
+});
 
 class NavBar extends Component {
 
@@ -25,7 +23,7 @@ class NavBar extends Component {
 
   handleRegister = () => {
     this.props.openModal('RegisterModal')
-  }
+  };
 
   handleSignOut = () => {
     this.props.firebase.logout();
