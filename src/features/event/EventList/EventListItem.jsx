@@ -1,77 +1,51 @@
-import React from 'react';
-import { Segment, Image, Item, Header, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-import format from 'date-fns/format';
+import React, { Component } from 'react';
+import { Segment, Item, Icon, List, Button, Label } from 'semantic-ui-react';
+import { Link } from 'react-router-dom'
+import EventListAttendee from './EventListAttendee'
+import format from 'date-fns/format'
+import { objectToArray } from '../../../app/common/util/helpers'
 
-const eventImageStyle = {
-  filter: 'brightness(30%)'
-};
-
-const eventImageTextStyle = {
-  position: 'absolute',
-  bottom: '5%',
-  left: '5%',
-  width: '100%',
-  height: 'auto',
-  color: 'white'
-};
-
-const EventDetailedHeader = ({ event, isHost, isGoing, goingToEvent, cancelGoingToEvent }) => {
-  let eventDate;
-  if (event.date) {
-    eventDate = event.date.toDate();
-  }
-  return (
-    <Segment.Group>
-      <Segment basic attached="top" style={{ padding: '0' }}>
-        <Image
-          src={`/assets/categoryImages/${event.category}.jpg`}
-          fluid
-          style={eventImageStyle}
-        />
-
-        <Segment basic style={eventImageTextStyle}>
+class EventListItem extends Component {
+  render() {
+    const { event } = this.props
+    return (
+      <Segment.Group>
+        <Segment>
           <Item.Group>
             <Item>
+              <Item.Image size="tiny" circular src={event.hostPhotoURL}/>
               <Item.Content>
-                <Header
-                  size="huge"
-                  content={event.title}
-                  style={{ color: 'white' }}
-                />
-                <p>{format(eventDate, 'dddd Do MMMM')}</p>
-                <p>
-                  Hosted by <strong>{event.hostedBy}</strong>
-                </p>
+                <Item.Header as={Link} to={`/event/${event.id}`}>{event.title}</Item.Header>
+                <Item.Description>
+                  Hosted by <Link to={`/profile/${event.hostUid}`}>{event.hostedBy}</Link>
+                </Item.Description>
+                {event.cancelled &&
+                <Label style={{ top: '-40px' }} ribbon='right' color='red' content='This event has been cancelled'/>}
               </Item.Content>
             </Item>
           </Item.Group>
         </Segment>
-      </Segment>
+        <Segment>
+          <span>
+            <Icon name="clock"/> {format(event.date.toDate(), 'dddd Do MMMM')} at {format(event.date.toDate(), 'HH:mm')}|
+            <Icon name="marker"/> {event.venue}
+          </span>
+        </Segment>
+        <Segment secondary>
+          <List horizontal>
+            {event.attendees && objectToArray(event.attendees).map((attendee) => (
+              <EventListAttendee key={attendee.id} attendee={attendee}/>
+            ))}
 
-      <Segment attached="bottom">
-        {!isHost && (
-          <div>
-            {isGoing ? (
-                <Button onClick={() => cancelGoingToEvent(event)}>Cancel My Place</Button>
-              ) : (
-                <Button onClick={() => goingToEvent(event)} color="teal">JOIN THIS EVENT</Button>
-              )}
-          </div>
-        )}
+          </List>
+        </Segment>
+        <Segment clearing>
+          <span>{event.description}</span>
+          <Button as={Link} to={`/event/${event.id}`} color="teal" floated="right" content="View"/>
+        </Segment>
+      </Segment.Group>
+    );
+  }
+}
 
-        {isHost && (
-          <Button
-            as={Link}
-            to={`/manage/${event.id}`}
-            color="orange"
-          >
-            Manage Event
-          </Button>
-        )}
-      </Segment>
-    </Segment.Group>
-  );
-};
-
-export default EventDetailedHeader;
+export default EventListItem;
