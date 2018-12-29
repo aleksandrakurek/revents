@@ -26,15 +26,9 @@ const SettingsDashboard = ({ updatePassword, providerId, user, updateProfile }) 
       <Grid.Column width={12}>
         <Switch>
           <Redirect exact from="/settings" to="/settings/basic"/>
-          <Route
-            path="/settings/basic"
-            render={() => <BasicPage updateProfile={updateProfile} initialValues={user}/>}/>
-          <Route
-            path="/settings/about"
-            render={() => <AboutPage updateProfile={updateProfile} initialValues={user}/>}/>
-          <Route
-            path="/settings/photos"
-            component={PhotosPage}/>
+          <Route path="/settings/basic" render={() => <BasicPage updateProfile={updateProfile} initialValues={user}/>}/>
+          <Route path="/settings/about" render={() => <AboutPage updateProfile={updateProfile} initialValues={user}/>}/>
+          <Route path="/settings/photos" component={PhotosPage}/>
           <Route
             path="/settings/account"
             render={() => <AccountPage updatePassword={updatePassword} providerId={providerId}/>}
