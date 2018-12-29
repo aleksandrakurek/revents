@@ -69,7 +69,6 @@ class EventDashboard extends Component {
     const { loading, activities } = this.props;
     const { moreEvents, loadedEvents } = this.state;
     if (this.state.loadingInitial) return <LoadingComponent inverted={true}/>;
-    //todo lista sie nie wyswietla bo tutaj dostaje true
 
     return (
       <Grid>
