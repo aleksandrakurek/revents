@@ -36,7 +36,7 @@ exports.createActivity = functions.firestore.document('event/{eventId}').onCreat
     });
 });
 
-exports.cancelActivity = functions.firestore.document('events/{eventId}').onUpdate((event, context) => {
+exports.cancelActivity = functions.firestore.document('event/{eventId}').onUpdate((event, context) => {
   let updatedEvent = event.after.data();
   let previousEventData = event.before.data();
   console.log({ event });

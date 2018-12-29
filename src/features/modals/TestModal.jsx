@@ -7,7 +7,7 @@ const actions = {
   closeModal
 }
 
-const TestModal = ({closeModal}) => {
+const TestModal = ({ closeModal }) => {
   return (
     <Modal closeIcon="close" open={true} onClose={closeModal}>
       <Modal.Header>Test Modal</Modal.Header>
