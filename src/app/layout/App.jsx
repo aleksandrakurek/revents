@@ -11,6 +11,7 @@ import EventDetailedPage from '../../features/event/EventDetailed/EventDetailedP
 import HomePage from '../../features/home/HomePage';
 import TestComponent from '../../features/testarea/TestComponent';
 import ModalManager from '../../features/modals/ModalManager';
+import { UserIsAuthenticated } from '../../features/auth/authWrapper'
 
 class App extends Component {
   render() {
