@@ -16,7 +16,7 @@ const eventImageTextStyle = {
   color: 'white'
 };
 
-const EventDetailedHeader = ({ event, isHost, isGoing, goingToEvent, cancelGoingToEvent }) => {
+const EventDetailedHeader = ({ loading, event, isHost, isGoing, goingToEvent, cancelGoingToEvent }) => {
   let eventDate;
   if (event.date) {
     eventDate = event.date.toDate();
@@ -53,10 +53,10 @@ const EventDetailedHeader = ({ event, isHost, isGoing, goingToEvent, cancelGoing
         {!isHost && (
           <div>
             {isGoing ? (
-              <Button onClick={() => cancelGoingToEvent(event)}>Cancel My Place</Button>
-            ) : (
-              <Button onClick={() => goingToEvent(event)} color="teal">JOIN THIS EVENT</Button>
-            )}
+                <Button onClick={() => cancelGoingToEvent(event)}>Cancel My Place</Button>
+              ) : (
+                <Button loading={loading} onClick={() => goingToEvent(event)} color="teal">JOIN THIS EVENT</Button>
+              )}
           </div>
         )}
 
