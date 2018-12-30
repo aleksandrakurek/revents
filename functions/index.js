@@ -15,7 +15,7 @@ const newActivity = (type, event, id) => {
   };
 };
 
-exports.createActivity = functions.firestore.document('event/{eventId}').onCreate(event => {
+exports.createActivity = functions.firestore.document('events/{eventId}').onCreate(event => {
   let newEvent = event.data();
 
   console.log(newEvent);
@@ -36,7 +36,7 @@ exports.createActivity = functions.firestore.document('event/{eventId}').onCreat
     });
 });
 
-exports.cancelActivity = functions.firestore.document('event/{eventId}').onUpdate((event, context) => {
+exports.cancelActivity = functions.firestore.document('events/{eventId}').onUpdate((event, context) => {
   let updatedEvent = event.after.data();
   let previousEventData = event.before.data();
   console.log({ event });
