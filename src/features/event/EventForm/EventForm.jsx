@@ -117,7 +117,7 @@ class EventForm extends Component {
       this.props.history.goBack();
     } else {
       this.props.createEvent(values);
-      this.props.history.push('/event');
+      this.props.history.push('/events');
     }
   };
 
