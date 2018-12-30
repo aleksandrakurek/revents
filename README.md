@@ -3,19 +3,17 @@
 ## Running App 
 `yarn start`
 
+https://localhost:3000
 
-##Deploy on github pages
+##Update firebase scripts
+`firebase deploy --only functions`
 
-`git checkout gh-pages`
+##Build App
+`npm run build`
 
-`git merge master`
+##Build & Deploy to firebase
 
 `npm run deploy`
 
-`yarn run deploy`
-
-visit:
-https://aleksandrakurek.github.io/revents/
-
-Source: 
-https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages
+##Visit:
+https://revents-215119.firebaseapp.com
