@@ -28,7 +28,7 @@ const RegisterForm = ({ registerUser, handleSubmit, error, invalid, submitting, 
             name="displayName"
             type="text"
             component={TextInput}
-            placeholder="Known As"
+            placeholder="Znany jako"
           />
           <Field
             name="email"
@@ -44,7 +44,7 @@ const RegisterForm = ({ registerUser, handleSubmit, error, invalid, submitting, 
           />
           {error && <Label basic color='red'>{error}</Label>}
           <Button disabled={invalid || submitting} fluid size="large" color="teal">
-            Register
+            Zarejestruj
           </Button>
           <Divider horizontal>Or</Divider>
           <SocialLogin socialLogin={socialLogin}/>

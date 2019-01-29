@@ -9,21 +9,21 @@ class EventActivityItem extends Component {
       case 'newEvent':
         return (
           <div>
-            New Event!{' '}
+            Nowe wydarzenie!{' '}
             <Feed.User as={Link} to={{ pathname: '/profile/' + activity.hostUid }}>
               {activity.hostedBy}
             </Feed.User>{' '}
-            is hosting <Link to={{ pathname: '/event/' + activity.eventId }}>{activity.title}</Link>
+            utworzył/a <Link to={{ pathname: '/event/' + activity.eventId }}>{activity.title}</Link>
           </div>
         );
       case 'cancelledEvent':
         return (
           <div>
-            Event Cancelled!{' '}
+            Wydarzenie anulowane!{' '}
             <Feed.User as={Link} to={{ pathname: '/profile/' + activity.hostUid }}>
               {activity.hostedBy}
             </Feed.User>{' '}
-            has cancelled <Link to={{ pathname: '/event/' + activity.eventId }}>{activity.title}</Link>
+            anulował/a <Link to={{ pathname: '/event/' + activity.eventId }}>{activity.title}</Link>
           </div>
         );
       default:
@@ -42,7 +42,7 @@ class EventActivityItem extends Component {
         <Feed.Content>
           <Feed.Summary>{this.renderSummary(activity)}</Feed.Summary>
           <Feed.Meta>
-            <Feed.Date>{distanceInWordsToNow(activity.timestamp.toDate())} ago</Feed.Date>
+            <Feed.Date>{distanceInWordsToNow(activity.timestamp.toDate())} temu</Feed.Date>
           </Feed.Meta>
         </Feed.Content>
       </Feed.Event>

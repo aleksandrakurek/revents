@@ -12,14 +12,14 @@ class BasicPage extends Component {
     const { pristine, submitting, handleSubmit, updateProfile } = this.props;
     return (
       <Segment>
-        <Header dividing size="large" content="Basics"/>
+        <Header dividing size="large" content="Podstawowe"/>
         <Form onSubmit={handleSubmit(updateProfile)}>
           <Field
             width={8}
             name="displayName"
             type="text"
             component={TextInput}
-            placeholder="Known As"
+            placeholder="Znany/a jako"
           />
           <Form.Group inline>
             <label>Gender: </label>
@@ -27,14 +27,14 @@ class BasicPage extends Component {
               name="gender"
               type="radio"
               value="male"
-              label="Male"
+              label="Mężczyzna"
               component={RadioInput}
             />
             <Field
               name="gender"
               type="radio"
               value="female"
-              label="Female"
+              label="Kobieta"
               component={RadioInput}
             />
           </Form.Group>
@@ -47,11 +47,11 @@ class BasicPage extends Component {
             showMonthDropdown={true}
             dropdownMode='select'
             maxDate={moment().subtract(18, 'years')}
-            placeholder="Date of Birth"
+            placeholder="Data urodzenia"
           />
           <Field
             name="city"
-            placeholder="Home Town"
+            placeholder="Miasto"
             options={{ types: ['(cities)'] }}
             label="Female"
             component={PlaceInput}
@@ -62,7 +62,7 @@ class BasicPage extends Component {
             disabled={pristine || submitting}
             size="large"
             positive
-            content="Update Profile"
+            content="Aktualizuj profil"
           />
         </Form>
       </Segment>

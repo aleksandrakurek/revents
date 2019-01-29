@@ -14,7 +14,7 @@ export const updateProfile = user => async(dispatch, getState, { getFirebase }) 
 
   try {
     await firebase.updateProfile(updatedUser);
-    toastr.success('Success', 'Profile updated');
+    toastr.success('Sukces', 'Profil uaktualniony');
   } catch (error) {
     console.log(error);
   }
@@ -62,7 +62,7 @@ export const uploadProfileImage = (file, fileName) => async(dispatch, getState, 
   } catch (error) {
     console.log(error);
     dispatch(asyncActionError());
-    throw new Error('Problem uploading photo');
+    throw new Error('Problem z załadowaniem zdjęcia');
   }
 };
 
@@ -79,7 +79,7 @@ export const deletePhoto = photo => async(dispatch, getState, { getFirebase, get
     });
   } catch (error) {
     console.log(error);
-    throw new Error('Problem deleting the photo');
+    throw new Error('Problem z usunięciem zdjęcia');
   }
 };
 
@@ -121,7 +121,7 @@ export const setMainPhoto = photo => async(dispatch, getState) => {
   } catch (error) {
     console.log(error);
     dispatch(asyncActionError())
-    throw new Error('Problem setting main photo');
+    throw new Error('Problem z ustawieniem jako główne zdjęcie');
   }
 };
 
@@ -154,11 +154,11 @@ export const goingToEvent = event => async(dispatch, getState) => {
       })
     })
     dispatch(asyncActionFinish())
-    toastr.success('Success', 'You have signed up to the event');
+    toastr.success('Sukces', 'Zapisałeś się na wydarzenie');
   } catch (error) {
     console.log(error);
     dispatch(asyncActionError())
-    toastr.error('Oops', 'Problem signing up to event');
+    toastr.error('Ups!', 'Problem z zapisaniem się na wydarzenie');
   }
 };
 
@@ -170,10 +170,10 @@ export const cancelGoingToEvent = event => async(dispatch, getState, { getFirest
       [`attendees.${user.uid}`]: firestore.FieldValue.delete()
     });
     await firestore.delete(`event_attendee/${event.id}_${user.uid}`);
-    toastr.success('Success', 'You have removed yourself from the event');
+    toastr.success('Sukces', 'Zostałeś wypisany z wydarzenia');
   } catch (error) {
     console.log(error);
-    toastr.error('Oops', 'something went wrong');
+    toastr.error('Ups', 'Coś poszło nie tak');
   }
 };
 

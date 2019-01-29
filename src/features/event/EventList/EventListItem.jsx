@@ -17,17 +17,17 @@ class EventListItem extends Component {
               <Item.Content>
                 <Item.Header as={Link} to={`/event/${event.id}`}>{event.title}</Item.Header>
                 <Item.Description>
-                  Hosted by <Link to={`/profile/${event.hostUid}`}>{event.hostedBy}</Link>
+                  Gospodarz <Link to={`/profile/${event.hostUid}`}>{event.hostedBy}</Link>
                 </Item.Description>
                 {event.cancelled &&
-                <Label style={{ top: '-40px' }} ribbon='right' color='red' content='This event has been cancelled'/>}
+                <Label style={{ top: '-40px' }} ribbon='right' color='red' content='To wydarzenie zostało odwolane'/>}
               </Item.Content>
             </Item>
           </Item.Group>
         </Segment>
         <Segment>
           <span>
-            <Icon name="clock"/> {format(event.date.toDate(), 'dddd Do MMMM')} at {format(event.date.toDate(), 'HH:mm')}|
+            <Icon name="clock"/> {format(event.date.toDate(), 'dddd Do MMMM')} o godzinie {format(event.date.toDate(), 'HH:mm')}|
             <Icon name="marker"/> {event.venue}
           </span>
         </Segment>
@@ -41,7 +41,7 @@ class EventListItem extends Component {
         </Segment>
         <Segment clearing>
           <span>{event.description}</span>
-          <Button as={Link} to={`/event/${event.id}`} color="teal" floated="right" content="View"/>
+          <Button as={Link} to={`/event/${event.id}`} color="teal" floated="right" content="Widok"/>
         </Segment>
       </Segment.Group>
     );

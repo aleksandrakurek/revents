@@ -11,7 +11,7 @@ export const login = (creds) => {
     } catch (error) {
       console.log(error);
       throw new SubmissionError({
-        _error: 'Login failed'
+        _error: 'Logowanie nie powiodło się'
       })
     }
   }
@@ -73,7 +73,7 @@ export const updatePassword = (creds) =>
     try {
       await user.updatePassword(creds.newPassword1);
       await dispatch(reset('account'));
-      toastr.success('Success', 'Your password has been updated')
+      toastr.success('Sukces', 'Zaaktualizowano hasło')
     } catch (error) {
       throw new SubmissionError({
         _error: error.message

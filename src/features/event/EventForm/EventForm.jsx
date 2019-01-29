@@ -126,40 +126,40 @@ class EventForm extends Component {
     return (
       <Grid>
         <Script
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIXB0LUEp2y1m7TpboN3Mt2kzjOhydXXw&libraries=places"
+          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTPUKf4H7lEswfbR1V40l72a_6oexvyY&libraries=places"
           onLoad={this.handleScriptLoaded}
         />
         <Grid.Column width={10}>
           <Segment>
-            <Header sub color="teal" content="Event Details"/>
+            <Header sub color="teal" content="Szczegóły wydarzenia"/>
             <Form onSubmit={this.props.handleSubmit(this.onFormSubmit)}>
               <Field
                 name="title"
                 type="text"
                 component={TextInput}
-                placeholder="Give your event a name"
+                placeholder="Podaj nazwę wydarzenia"
               />
               <Field
                 name="category"
                 type="text"
                 component={SelectInput}
                 options={category}
-                placeholder="What is your event about"
+                placeholder="Czego dotyczy wydarzenie"
               />
               <Field
                 name="description"
                 type="text"
                 component={TextArea}
                 rows={3}
-                placeholder="Tell us about your event"
+                placeholder="Opowiedz o swoim wydarzeniu"
               />
-              <Header sub color="teal" content="Event Location details"/>
+              <Header sub color="teal" content="Dane lokalizacyjne"/>
               <Field
                 name="city"
                 type="text"
                 component={PlaceInput}
                 options={{ types: ['(cities)'] }}
-                placeholder="Event city"
+                placeholder="Miasto"
                 onSelect={this.handleCitySelect}
               />
               {this.state.scriptLoaded && (
@@ -172,7 +172,7 @@ class EventForm extends Component {
                     radius: 1000,
                     types: ['establishment']
                   }}
-                  placeholder="Event venue"
+                  placeholder="Adres"
                   onSelect={this.handleVenueSelect}
                 />
               )}
@@ -183,7 +183,7 @@ class EventForm extends Component {
                 dateFormat="YYYY-MM-DD HH:mm"
                 timeFormat="HH:mm"
                 showTimeSelect
-                placeholder="Date and time of event"
+                placeholder="Data i godzina"
               />
               <Button
                 loading={loading}
@@ -191,10 +191,10 @@ class EventForm extends Component {
                 positive
                 type="submit"
               >
-                Submit
+                Zapisz
               </Button>
               <Button disabled={loading} onClick={this.props.history.goBack} type="button">
-                Cancel
+                Anuluj
               </Button>
               {event.id &&
               <Button
@@ -203,7 +203,7 @@ class EventForm extends Component {
                 type='button'
                 color={event.cancelled ? 'green' : 'red'}
                 floated='right'
-                content={event.cancelled ? 'Reactivate Event' : 'Cancel Event'}
+                content={event.cancelled ? 'Reaktywuj' : 'Anuluj'}
               />}
             </Form>
           </Segment>

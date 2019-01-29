@@ -33,13 +33,13 @@ const PeopleDashboard = ({ followings, followers }) => {
     <Grid>
       <Grid.Column width={16}>
         <Segment>
-          <Header dividing content="People following me"/>
+          <Header dividing content="Ludzie śledzący mnie"/>
           <Card.Group itemsPerRow={8} stackable>
             {followers && followers.map(follower => <PersonCard key={follower.id} user={follower}/>)}
           </Card.Group>
         </Segment>
         <Segment>
-          <Header dividing content="People I'm following"/>
+          <Header dividing content="Ludzie, których śledze"/>
           <Card.Group itemsPerRow={8} stackable>
             {followers && followings.map(following => <PersonCard key={following.id} user={following}/>)}
           </Card.Group>

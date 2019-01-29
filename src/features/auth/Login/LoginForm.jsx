@@ -19,19 +19,19 @@ const LoginForm = ({ login, handleSubmit, error, socialLogin }) => {
           name="email"
           component={TextInput}
           type="text"
-          placeholder="Email Address"
+          placeholder="Email"
         />
         <Field
           name="password"
           component={TextInput}
           type="password"
-          placeholder="password"
+          placeholder="Hasło"
         />
         {error && <Label basic color='red'>{error}</Label>}
         <Button fluid size="large" color="teal">
-          Login
+          Zaloguj
         </Button>
-        <Divider horizontal>Or</Divider>
+        <Divider horizontal>lub</Divider>
         <SocialLogin socialLogin={socialLogin}/>
       </Segment>
     </Form>

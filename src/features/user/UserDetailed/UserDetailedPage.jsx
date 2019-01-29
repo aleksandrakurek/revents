@@ -46,7 +46,7 @@ class UserDetailedPage extends Component {
   async componentDidMount() {
     let user = await this.props.firestore.get(`users/${this.props.match.params.id}`);
     if (!user.exists) {
-      toastr.error('Not found', 'This is not the user you are looking for')
+      toastr.error('Nieznaleziono', 'To nie jest użytkownik, którego szukasz')
       this.props.history.push('/error')
     }
     let events = await this.props.getUserEvents(this.props.userUid);

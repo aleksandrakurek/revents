@@ -12,20 +12,20 @@ const UserDetailedDescription = ({ profile }) => {
       <Segment>
         <Grid columns={2}>
           <Grid.Column width={10}>
-            <Header icon="smile" content="About"/>
+            <Header icon="smile" content="O mnie"/>
             <p>
-              I am a: <strong>{profile.occupation || 'tbn'}</strong>
+              Mój zawód to: <strong>{profile.occupation || 'tbn'}</strong>
             </p>
             <p>
-              Originally from <strong>{profile.origin || 'tbn'}</strong>
+              Pochodzę z <strong>{profile.origin || 'tbn'}</strong>
             </p>
             <p>
-              Member Since: <strong>{createdAt}</strong>
+              Jestem członkiem od: <strong>{createdAt}</strong>
             </p>
             <p>{profile.description}</p>
           </Grid.Column>
           <Grid.Column width={6}>
-            <Header icon="heart outline" content="Interests"/>
+            <Header icon="heart outline" content="Zainteresowania"/>
             {profile.interests ?
               <List>
                 {profile.interests &&
@@ -35,7 +35,7 @@ const UserDetailedDescription = ({ profile }) => {
                     <Item.Content>{interest}</Item.Content>
                   </Item>
                 ))}
-              </List> : <p>No interests</p>}
+              </List> : <p>Nie mam żadnych zainteresowań</p>}
           </Grid.Column>
         </Grid>
       </Segment>

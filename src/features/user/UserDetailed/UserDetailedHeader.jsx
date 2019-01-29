@@ -7,7 +7,7 @@ const UserDetailedHeader = ({profile}) => {
   if (profile.dateOfBirth) {
     age = differenceInYears(Date.now(), profile.dateOfBirth.toDate())
   } else {
-    age = 'unknown age'
+    age = 'nieznany wiek'
   }
   return (
     <Grid.Column width={16}>
@@ -24,7 +24,7 @@ const UserDetailedHeader = ({profile}) => {
               <br />
               <Header as="h3">{profile.occupation}</Header>
               <br />
-              <Header as="h3">{age}, Lives in {profile.city || 'unknown city'}</Header>
+              <Header as="h3">{age}, Mieszka w {profile.city || 'unknown city'}</Header>
             </Item.Content>
           </Item>
         </Item.Group>

@@ -23,23 +23,23 @@ class UnauthModal extends Component {
     const { openModal } = this.props;
     return (
       <Modal size="mini" open={true} onClose={this.handleCloseModal}>
-        <Modal.Header>You need to be signed in to do that!</Modal.Header>
+        <Modal.Header>Musisz być zalogowany aby to zrobić!</Modal.Header>
         <Modal.Content>
           <Modal.Description>
-            <p>Please either login or register to see this page</p>
+            <p>Aby zobaczyć tą stronę zaloguj lub zarejestruj się</p>
             <Button.Group widths={4}>
               <Button fluid color="teal" onClick={() => openModal('LoginModal')}>
-                Login
+                Zaloguj się
               </Button>
               <Button.Or />
               <Button fluid positive onClick={() => openModal('RegisterModal')}>
-                Register
+                Zarejestruj się
               </Button>
             </Button.Group>
             <Divider />
             <div style={{ textAlign: 'center' }}>
-              <p>Or click cancel to continue as a guest</p>
-              <Button onClick={this.handleCloseModal}>Cancel</Button>
+              <p>Lub kliknij anuluj, aby kontynuuować jako gość</p>
+              <Button onClick={this.handleCloseModal}>Anuluj</Button>
             </div>
           </Modal.Description>
         </Modal.Content>

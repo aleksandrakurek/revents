@@ -39,11 +39,11 @@ class NavBar extends Component {
         <Container>
           <Menu.Item as={Link} to="/" header>
             <img src="/assets/logo.png" alt="logo"/>
-            Re-vents
+            MyEvents
           </Menu.Item>
-          <Menu.Item as={NavLink} to="/events" name="Events"/>
+          <Menu.Item as={NavLink} to="/events" name="Wydarzenia"/>
           {authenticated &&
-          <Menu.Item as={NavLink} to="/people" name="People"/>}
+          <Menu.Item as={NavLink} to="/people" name="Ludzie"/>}
 
           {authenticated &&
           <Menu.Item>
@@ -53,7 +53,7 @@ class NavBar extends Component {
               floated="right"
               positive
               inverted
-              content="Create Event"
+              content="Stwórz Wydarzenie"
             />
           </Menu.Item>}
           {authenticated ? (

@@ -16,7 +16,7 @@ class LoginModal extends Component {
         onClose={this.props.closeModal}
       >
         <Modal.Header>
-          Login to Re-vents
+          Zaloguj się do MyEvents
         </Modal.Header>
         <Modal.Content>
           <Modal.Description>

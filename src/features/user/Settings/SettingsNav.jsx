@@ -7,9 +7,9 @@ const SettingsNav = () => {
     <Grid.Column width={4}>
       <Menu vertical>
         <Header icon="user" attached inverted color="grey" content="Profile"/>
-        <Menu.Item as={NavLink} to='/settings/basic'>Basics</Menu.Item>
-        <Menu.Item as={NavLink} to='/settings/about'>About Me</Menu.Item>
-        <Menu.Item as={NavLink} to='/settings/photos'>My Photos</Menu.Item>
+        <Menu.Item as={NavLink} to='/settings/basic'>Podstawowe informace</Menu.Item>
+        <Menu.Item as={NavLink} to='/settings/about'>O mnie</Menu.Item>
+        <Menu.Item as={NavLink} to='/settings/photos'>Moje zdjęcia</Menu.Item>
       </Menu>
       <Grid.Row />
       <Menu vertical>
@@ -18,9 +18,9 @@ const SettingsNav = () => {
           attached
           inverted
           color="grey"
-          content="Account"
+          content="Konto"
         />
-        <Menu.Item as={NavLink} to='/settings/account'>My Account</Menu.Item>
+        <Menu.Item as={NavLink} to='/settings/account'>Moje konto</Menu.Item>
       </Menu>
     </Grid.Column>
   );

@@ -64,18 +64,18 @@ class TestComponent extends Component {
     return (
       <div>
         <h1>Test Area</h1>
-        <h3>The answer is: {data}</h3>
-        <Button loading={loading} onClick={incrementAsync} color="green" content="Increment"/>
-        <Button loading={loading} onClick={decrementAsync} color="red" content="Decrement"/>
-        <Button onClick={() => openModal('TestModal', { data: 42 })} color="teal" content="Open Modal"/>
-        <Button onClick={testPermissions} color="teal" content="Test Permissions"/>
+        <h3>Odpowiedź to: {data}</h3>
+        <Button loading={loading} onClick={incrementAsync} color="green" content="Rosnąco"/>
+        <Button loading={loading} onClick={decrementAsync} color="red" content="Malejąco"/>
+        <Button onClick={() => openModal('TestModal', { data: 42 })} color="teal" content="Otwórz modal"/>
+        <Button onClick={testPermissions} color="teal" content="Testuj pozwolenia"/>
         <br />
         <br />
         <form onSubmit={this.handleFormSubmit}>
           {this.state.scriptLoaded && (
             <PlacesAutocomplete inputProps={inputProps}/>
           )}
-          <button type="submit">Submit</button>
+          <button type="submit">Wyślij</button>
         </form>
 
       </div>

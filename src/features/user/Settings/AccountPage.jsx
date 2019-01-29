@@ -18,10 +18,10 @@ import {
 import TextInput from '../../../app/common/form/TextInput';
 
 const validate = combineValidators({
-  newPassword1: isRequired({ message: 'Please enter a password' }),
+  newPassword1: isRequired({ message: 'Podaj hasło' }),
   newPassword2: composeValidators(
-    isRequired({ message: 'Please confirm your new password' }),
-    matchesField('newPassword1')({ message: 'Passwords do not match' })
+    isRequired({ message: 'Potwierdź hasło' }),
+    matchesField('newPassword1')({ message: 'Hasła nie są identyczne' })
   )()
 });
 
@@ -39,8 +39,8 @@ const AccountPage = ({
       {providerId &&
       providerId === 'password' && (
         <div>
-          <Header color="teal" sub content="Change password"/>
-          <p>Use this form to update your account settings</p>
+          <Header color="teal" sub content="Zmień hasło"/>
+          <p>Użyj tego formularza, aby zaaktualizować ustawienia konta</p>
           <Form onSubmit={handleSubmit(updatePassword)}>
             <Field
               width={8}
@@ -50,7 +50,7 @@ const AccountPage = ({
               inline={true}
               component={TextInput}
               basic={true}
-              placeholder="New Password"
+              placeholder="Nowe hasło"
             />
             <Field
               width={8}
@@ -60,7 +60,7 @@ const AccountPage = ({
               basic={true}
               pointing="left"
               component={TextInput}
-              placeholder="Confirm Password"
+              placeholder="Potwierdź hasło"
             />
             {error && (
               <Label basic color="red">
@@ -72,7 +72,7 @@ const AccountPage = ({
               disabled={invalid || submitting}
               size="large"
               positive
-              content="Update Password"
+              content="Zaaktualizuj hasło"
             />
           </Form>
         </div>
@@ -81,11 +81,11 @@ const AccountPage = ({
       {providerId &&
       providerId === 'facebook.com' && (
         <div>
-          <Header color="teal" sub content="Facebook Account"/>
-          <p>Please visit Facebook to update your account settings</p>
+          <Header color="teal" sub content="Konto Facebook"/>
+          <p>Odwiedź Facebook aby zaaktualizaować ustawienia konta</p>
           <Button type="button" color="facebook">
             <Icon name="facebook"/>
-            Go to Facebook
+            Idź do Facebook
           </Button>
         </div>
       )}
@@ -93,11 +93,11 @@ const AccountPage = ({
       {providerId &&
       providerId === 'google.com' && (
         <div>
-          <Header color="teal" sub content="Google Account"/>
-          <p>Please visit Google to update your account settings</p>
+          <Header color="teal" sub content="Konto Google"/>
+          <p>Odwiedź Google aby zaaktualizaować ustawienia konta</p>
           <Button type="button" color="google plus">
             <Icon name="google plus"/>
-            Go to Google
+            Idź do Google
           </Button>
         </div>
       )}
