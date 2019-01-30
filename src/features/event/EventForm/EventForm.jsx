@@ -40,21 +40,21 @@ const actions = {
 };
 
 const category = [
-  { key: 'drinks', text: 'Drinks', value: 'drinks' },
-  { key: 'culture', text: 'Culture', value: 'culture' },
+  { key: 'drinks', text: 'Drinki', value: 'drinks' },
+  { key: 'culture', text: 'Kultura', value: 'culture' },
   { key: 'film', text: 'Film', value: 'film' },
-  { key: 'food', text: 'Food', value: 'food' },
-  { key: 'music', text: 'Music', value: 'music' },
-  { key: 'travel', text: 'Travel', value: 'travel' }
+  { key: 'food', text: 'Jedzenie', value: 'food' },
+  { key: 'music', text: 'Muzyka', value: 'music' },
+  { key: 'travel', text: 'Podróże', value: 'travel' }
 ];
 
 const validate = combineValidators({
-  title: isRequired({ message: 'The event title is required' }),
-  category: isRequired({ message: 'Please provide a category' }),
+  title: isRequired({ message: 'Tytuł wydarzenia jest wymagany' }),
+  category: isRequired({ message: 'Proszę podaj kategorię' }),
   description: composeValidators(
-    isRequired({ message: 'Please enter a description' }),
+    isRequired({ message: 'Proszę wprowadź opis' }),
     hasLengthGreaterThan(4)({
-      message: 'Description needs to be at least 5 characters'
+      message: 'Opis musi byc dłuższy niż 5 znaków'
     })
   )(),
   city: isRequired('city'),

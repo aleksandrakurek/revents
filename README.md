@@ -1,9 +1,24 @@
-# Revents App Readme.md
+# myEvents App Readme.md
 
-## Running App 
+You will need the following things properly installed on your computer.
+
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/)
+* [React.js](https://reactjs.org/)
+
+## Installation
+
+* `git clone https://github.com/aleksandrakurek/revents.git` this repository
+* `cd revents`
+* `npm install`
+* `yarn install`
+
+
+## Running / Development
+
 `yarn start`
 
-https://localhost:3000
+* Visit your page at [https://localhost:3000](http://localhost:3000)
 
 ##Update firebase scripts
 `firebase deploy --only functions`

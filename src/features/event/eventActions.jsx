@@ -20,9 +20,9 @@ export const createEvent = event => {
         eventDate: event.date,
         host: true
       });
-      toastr.success('Success', 'Event has been created');
+      toastr.success('Success', 'Wydarzenie zostało utworzone');
     } catch (error) {
-      toastr.error('Oops', 'Something went wrong');
+      toastr.error('Oops', 'Cos poszlo nie tak');
     }
   };
 };
@@ -56,11 +56,11 @@ export const updateEvent = event => {
         await eventDocRef.update(event);
       }
       dispatch(asyncActionFinish());
-      toastr.success('Success', 'Event has been updated');
+      toastr.success('Success', 'Wydarzenie zaaktualizowano');
     } catch (error) {
       console.log(error);
       dispatch(asyncActionError());
-      toastr.error('Oops', 'Something went wrong');
+      toastr.error('Oops', 'Cos poszlo nie tak');
     }
   };
 };
@@ -68,8 +68,8 @@ export const updateEvent = event => {
 export const cancelToggle = (cancelled, eventId) => async(dispatch, getState, { getFirestore }) => {
   const firestore = getFirestore();
   const message = cancelled
-    ? 'Are you sure you want to cancel the event?'
-    : 'This reactivate the event - are you sure?';
+    ? 'Jesteś pewien, że chcesz anulować to wydarzenie?'
+    : 'Reaktywujesz wydarzenie- jesteś pewien, że chcesz to zrobić?';
   try {
     toastr.confirm(message, {
       onOk: () =>
@@ -145,6 +145,6 @@ export const addEventComment = (eventId, values, parentId) => async(dispatch, ge
     await firebase.push(`event_chat/${eventId}`, newComment);
   } catch (error) {
     console.log(error);
-    toastr.error('Oops', 'Problem adding comment');
+    toastr.error('Oops', 'Problem z dodaniem komentarza');
   }
 };

@@ -72,7 +72,7 @@ const EventDetailedHeader = ({ openModal, authenticated, loading, event, isHost,
             to={`/manage/${event.id}`}
             color="orange"
           >
-            Manage Event
+            Zarządzaj Wydarzeniem
           </Button>
         )}
 

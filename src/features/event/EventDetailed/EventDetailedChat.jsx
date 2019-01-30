@@ -30,7 +30,7 @@ class EventDetailedChat extends Component {
     return (
       <div>
         <Segment textAlign="center" attached="top" inverted color="teal" style={{ border: 'none' }}>
-          <Header>Chat about this event</Header>
+          <Header>Porozmawiaj o tym wydarzeniu</Header>
         </Segment>
 
         <Segment attached>
