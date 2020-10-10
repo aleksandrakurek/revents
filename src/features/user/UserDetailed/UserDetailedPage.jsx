@@ -50,7 +50,6 @@ class UserDetailedPage extends Component {
       this.props.history.push('/error')
     }
     let events = await this.props.getUserEvents(this.props.userUid);
-    console.log(events);
   }
 
   changeTab = (e, data) => {
