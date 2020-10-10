@@ -1,4 +1,4 @@
-# myEvents App Readme.md
+# Revents App Readme.md
 
 You will need the following things properly installed on your computer.
 
@@ -15,7 +15,6 @@ You will need the following things properly installed on your computer.
 
 
 ## Running / Development
-
 `yarn start`
 
 * Visit your page at [https://localhost:3000](http://localhost:3000)
