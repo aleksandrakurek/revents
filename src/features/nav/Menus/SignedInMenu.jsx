@@ -8,7 +8,7 @@ const SignedInMenu = ({ signOut, profile, auth }) => {
       <Image avatar spaced="right" src={profile.photoURL || "/assets/user.png"}/>
       <Dropdown pointing="top left" text={profile.displayName}>
         <Dropdown.Menu>
-          <Dropdown.Item as={Link} to='/createEvent' text="Utworz wydarzenie" icon="plus"/>
+          <Dropdown.Item as={Link} to='/createEvent' text="Utwórz wydarzenie" icon="plus"/>
           <Dropdown.Item as={Link} to='/events' text="Moje wydarzenia" icon="calendar"/>
           <Dropdown.Item as={Link} to='/people' text="Moja społeczność" icon="users"/>
           <Dropdown.Item as={Link} to={`/profile/${auth.uid}`} text="Mój profil" icon="user"/>
