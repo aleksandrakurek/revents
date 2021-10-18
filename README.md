@@ -46,5 +46,6 @@ Before merge to master:
 
 ### 1.0.1
 18.10.2021
-* Yarn and npm packages has been updated 
+* Test components have been removed
+* Yarn and npm packages have been updated 
 * README has been updated
