@@ -46,6 +46,7 @@ Before merge to master:
 
 ### 1.0.1
 18.10.2021
+* New main colors have been added
 * Test components have been removed
 * Yarn and npm packages have been updated 
 * README has been updated
