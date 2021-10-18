@@ -11,11 +11,10 @@ You will need the following things properly installed on your computer.
 * `git clone https://github.com/aleksandrakurek/revents.git` this repository
 * `cd revents`
 * `npm install`
-* `yarn install`
 
 
 ## Running / Development
-`yarn start`
+`npm start`
 
 * Visit your page at [https://localhost:3000](http://localhost:3000)
 
@@ -31,3 +30,19 @@ You will need the following things properly installed on your computer.
 
 ##Visit:
 https://revents-215119.firebaseapp.com
+
+
+## Notes
+
+Before merge to master:
+
+* Update app version (according to this approach [https://semver.org/](https://semver.org/))
+* Update README Changelog
+* Create git tag with correct version number `git tag release-v.1.1.0` and push to
+  origin `git push origin release-v.1.1.0`
+
+## Changelog
+
+### 1.0.1
+18.10.2021
+* README has been updated
