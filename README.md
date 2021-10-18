@@ -40,3 +40,9 @@ Before merge to master:
 * Update README Changelog
 * Create git tag with correct version number `git tag release-v.1.1.0` and push to
   origin `git push origin release-v.1.1.0`
+
+## Changelog
+
+### 1.0.1
+18.10.2021
+* README has been updated
