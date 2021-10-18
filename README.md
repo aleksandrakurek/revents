@@ -11,6 +11,7 @@ You will need the following things properly installed on your computer.
 * `git clone https://github.com/aleksandrakurek/revents.git` this repository
 * `cd revents`
 * `npm install`
+* `yarn install`
 
 
 ## Running / Development
@@ -45,4 +46,5 @@ Before merge to master:
 
 ### 1.0.1
 18.10.2021
+* Yarn and npm packages has been updated 
 * README has been updated
