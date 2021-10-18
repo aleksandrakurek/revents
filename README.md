@@ -11,11 +11,10 @@ You will need the following things properly installed on your computer.
 * `git clone https://github.com/aleksandrakurek/revents.git` this repository
 * `cd revents`
 * `npm install`
-* `yarn install`
 
 
 ## Running / Development
-`yarn start`
+`npm start`
 
 * Visit your page at [https://localhost:3000](http://localhost:3000)
 
